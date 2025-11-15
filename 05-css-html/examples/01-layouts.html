@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Layout Examples</title>
+  <style>
+    /* Flexbox Examples */
+    .flexbox-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      padding: 20px;
+      background-color: #f0f0f0;
+      margin-bottom: 20px;
+    }
+
+    .flexbox-item {
+      padding: 20px;
+      background-color: #3498db;
+      color: white;
+      border-radius: 5px;
+    }
+
+    .flexbox-between {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background-color: #ecf0f1;
+    }
+
+    .flexbox-column {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 20px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+    }
+
+    /* Grid Examples */
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding: 20px;
+      background-color: #f0f0f0;
+      margin-bottom: 20px;
+    }
+
+    .grid-item {
+      padding: 20px;
+      background-color: #2ecc71;
+      color: white;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    .grid-areas {
+      display: grid;
+      grid-template-areas:
+        "header header header"
+        "sidebar main main"
+        "footer footer footer";
+      gap: 10px;
+      padding: 10px;
+    }
+
+    .grid-header { grid-area: header; background-color: #e74c3c; padding: 20px; color: white; }
+    .grid-sidebar { grid-area: sidebar; background-color: #f39c12; padding: 20px; color: white; }
+    .grid-main { grid-area: main; background-color: #3498db; padding: 20px; color: white; }
+    .grid-footer { grid-area: footer; background-color: #9b59b6; padding: 20px; color: white; }
+
+    /* Responsive Grid */
+    .responsive-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      background-color: #ecf0f1;
+    }
+
+    .responsive-item {
+      padding: 20px;
+      background-color: #34495e;
+      color: white;
+      border-radius: 5px;
+    }
+
+    /* Center Content */
+    .center-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 200px;
+      background-color: #fff;
+      border: 2px solid #ddd;
+      margin-bottom: 20px;
+    }
+
+    /* Holy Grail Layout */
+    .holy-grail {
+      display: grid;
+      grid-template-columns: 200px 1fr 200px;
+      grid-template-rows: auto 1fr auto;
+      min-height: 100vh;
+      gap: 10px;
+      padding: 10px;
+    }
+
+    .holy-grail-header {
+      grid-column: 1 / -1;
+      background-color: #3498db;
+      padding: 20px;
+      color: white;
+    }
+
+    .holy-grail-sidebar-left {
+      background-color: #e74c3c;
+      padding: 20px;
+      color: white;
+    }
+
+    .holy-grail-main {
+      background-color: #2ecc71;
+      padding: 20px;
+      color: white;
+    }
+
+    .holy-grail-sidebar-right {
+      background-color: #f39c12;
+      padding: 20px;
+      color: white;
+    }
+
+    .holy-grail-footer {
+      grid-column: 1 / -1;
+      background-color: #9b59b6;
+      padding: 20px;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <h1>CSS Layout Examples</h1>
+
+  <!-- Flexbox Examples -->
+  <section>
+    <h2>Flexbox Examples</h2>
+    
+    <div class="flexbox-container">
+      <div class="flexbox-item">Item 1</div>
+      <div class="flexbox-item">Item 2</div>
+      <div class="flexbox-item">Item 3</div>
+    </div>
+
+    <div class="flexbox-between">
+      <div>Left Content</div>
+      <div>Right Content</div>
+    </div>
+
+    <div class="flexbox-column">
+      <div>Row 1</div>
+      <div>Row 2</div>
+      <div>Row 3</div>
+    </div>
+  </section>
+
+  <!-- Grid Examples -->
+  <section>
+    <h2>CSS Grid Examples</h2>
+    
+    <div class="grid-container">
+      <div class="grid-item">Item 1</div>
+      <div class="grid-item">Item 2</div>
+      <div class="grid-item">Item 3</div>
+      <div class="grid-item">Item 4</div>
+      <div class="grid-item">Item 5</div>
+      <div class="grid-item">Item 6</div>
+    </div>
+
+    <div class="grid-areas">
+      <div class="grid-header">Header</div>
+      <div class="grid-sidebar">Sidebar</div>
+      <div class="grid-main">Main Content</div>
+      <div class="grid-footer">Footer</div>
+    </div>
+
+    <div class="responsive-grid">
+      <div class="responsive-item">Responsive 1</div>
+      <div class="responsive-item">Responsive 2</div>
+      <div class="responsive-item">Responsive 3</div>
+      <div class="responsive-item">Responsive 4</div>
+    </div>
+  </section>
+
+  <!-- Holy Grail Layout -->
+  <section>
+    <h2>Holy Grail Layout</h2>
+    <div class="holy-grail">
+      <header class="holy-grail-header">Header</header>
+      <aside class="holy-grail-sidebar-left">Left Sidebar</aside>
+      <main class="holy-grail-main">Main Content</main>
+      <aside class="holy-grail-sidebar-right">Right Sidebar</aside>
+      <footer class="holy-grail-footer">Footer</footer>
+    </div>
+  </section>
+</body>
+</html>
+

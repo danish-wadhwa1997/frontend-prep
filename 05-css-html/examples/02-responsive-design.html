@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Design Examples</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Mobile First Approach */
+    .container {
+      width: 100%;
+      padding: 10px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .card h2 {
+      margin-bottom: 10px;
+    }
+
+    /* Tablet */
+    @media (min-width: 768px) {
+      .container {
+        max-width: 750px;
+        padding: 20px;
+      }
+
+      .card {
+        display: inline-block;
+        width: 48%;
+        margin-right: 2%;
+      }
+    }
+
+    /* Desktop */
+    @media (min-width: 1024px) {
+      .container {
+        max-width: 1200px;
+        padding: 40px;
+      }
+
+      .card {
+        width: 32%;
+        margin-right: 1.33%;
+      }
+    }
+
+    /* Large Desktop */
+    @media (min-width: 1440px) {
+      .container {
+        max-width: 1400px;
+      }
+    }
+
+    /* Navigation Example */
+    .nav {
+      background-color: #333;
+      padding: 10px 0;
+    }
+
+    .nav ul {
+      list-style: none;
+      display: none;
+      flex-direction: column;
+    }
+
+    .nav ul.active {
+      display: flex;
+    }
+
+    .nav li {
+      padding: 10px 20px;
+    }
+
+    .nav a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .nav-toggle {
+      display: block;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 24px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+
+    @media (min-width: 768px) {
+      .nav ul {
+        display: flex;
+        flex-direction: row;
+      }
+
+      .nav-toggle {
+        display: none;
+      }
+    }
+
+    /* Fluid Typography */
+    .fluid-text {
+      font-size: clamp(16px, 4vw, 32px);
+    }
+
+    /* Responsive Images */
+    .responsive-img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Flexible Grid */
+    .flex-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    @media (min-width: 600px) {
+      .flex-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 900px) {
+      .flex-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .flex-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    /* Container Queries (Modern Browsers) */
+    .container-query {
+      container-type: inline-size;
+      padding: 20px;
+      background-color: #f0f0f0;
+    }
+
+    .container-query-item {
+      padding: 10px;
+      background-color: #3498db;
+      color: white;
+    }
+
+    @container (min-width: 400px) {
+      .container-query-item {
+        background-color: #2ecc71;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Responsive Design Examples</h1>
+
+  <!-- Responsive Navigation -->
+  <nav class="nav">
+    <button class="nav-toggle">☰</button>
+    <ul id="nav-menu">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <script>
+    document.querySelector('.nav-toggle').addEventListener('click', () => {
+      document.getElementById('nav-menu').classList.toggle('active');
+    });
+  </script>
+
+  <!-- Responsive Cards -->
+  <div class="container">
+    <div class="card">
+      <h2>Card 1</h2>
+      <p>This card adapts to different screen sizes using media queries.</p>
+    </div>
+    <div class="card">
+      <h2>Card 2</h2>
+      <p>Mobile: 100% width, Tablet: 48% width, Desktop: 32% width.</p>
+    </div>
+    <div class="card">
+      <h2>Card 3</h2>
+      <p>Try resizing your browser to see the responsive behavior.</p>
+    </div>
+  </div>
+
+  <!-- Fluid Typography -->
+  <div style="padding: 20px;">
+    <h2 class="fluid-text">Fluid Typography</h2>
+    <p>This text scales smoothly between 16px and 32px based on viewport width.</p>
+  </div>
+
+  <!-- Flexible Grid -->
+  <div class="flex-grid">
+    <div class="card">Item 1</div>
+    <div class="card">Item 2</div>
+    <div class="card">Item 3</div>
+    <div class="card">Item 4</div>
+  </div>
+
+  <!-- Container Queries -->
+  <div class="container-query">
+    <div class="container-query-item">
+      Container Query Example - Changes color at 400px width
+    </div>
+  </div>
+</body>
+</html>
+
